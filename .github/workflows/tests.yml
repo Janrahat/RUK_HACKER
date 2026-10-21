@@ -1,0 +1,51 @@
+name: tests
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test (py${{ matrix.python-version }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest]
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Show version
+        run: python --version
+
+      - name: Unit tests
+        env:
+          RUK_ACCEPT_TERMS: "1"
+        run: python -m unittest discover -s tests -p "test_units.py" -v
+
+      - name: Smoke tests (localhost only)
+        env:
+          RUK_ACCEPT_TERMS: "1"
+        run: python -m unittest discover -s tests -p "test_smoke.py" -v
+
+      - name: CLI smoke check
+        env:
+          RUK_ACCEPT_TERMS: "1"
+          RUK_NO_COLOR: "1"
+        run: |
+          python ruk_hacker.py version
+          python ruk_hacker.py --help

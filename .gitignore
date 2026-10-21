@@ -1,0 +1,64 @@
+# ---- RUK_HACKER ----
+# Byte-compiled / optimised / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+wheels/
+*.whl
+
+# Test / coverage artifacts
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+coverage.xml
+*.cover
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# RUK_HACKER runtime output
+reports/
+*.json
+*.html
+!package.json
+!version.json
+!*template*.html
+scan_*.txt
+out/
+logs/
+*.log
+
+# Local config / consent state
+.ruk_hacker/
+.ruk_hacker_consent*
+config.local.json
+
+# Editor / OS noise
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Secrets — never commit
+.env
+.env.*
+*.pem
+*.key
+!tests/fixtures/*.pem

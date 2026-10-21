@@ -1,0 +1,8 @@
+{
+  "name": "RUK_HACKER",
+  "version": "1.0.0",
+  "tagline": "Termux Security Toolkit",
+  "url": "https://github.com/Janrahat/RUK_HACKER",
+  "notes": "- Port scanner, DNS engine, WHOIS, IP intel\n- Web header + TLS audit\n- Subdomain enumeration and path discovery\n- JSON / HTML reports",
+  "updated": "2026-10-22"
+}

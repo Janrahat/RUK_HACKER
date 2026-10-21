@@ -1,0 +1,14 @@
+# RUK_HACKER has ZERO required third-party dependencies.
+# Everything below is optional and only used if present.
+#
+# Optional (installed via `pkg install` on Termux):
+#   python        -> runtime (required, but ships with the install script)
+#   openssl       -> extra TLS output via the `openssl` CLI
+#   dig/dnsutils  -> cross-check DNS results from the command line
+#   whois         -> cross-check WHOIS results
+#   nmap          -> compare port results
+#   curl / jq     -> handy for manual follow-up
+#
+# Optional Python packages (NOT needed; the tool is stdlib-only):
+# dnspython>=2.4   # only if you want to plug your own resolver wrapper
+# requests>=2.31  # only if you extend the HTTP layer
